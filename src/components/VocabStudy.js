@@ -1,63 +1,59 @@
 import React, { useState, useEffect } from 'react';
+import './VocabStudy.css';
 
-const VocabStudy = () => {
+const VocabStudy = ({ section, onBack }) => {
   const [words, setWords] = useState([]);
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [showMeaning, setShowMeaning] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
-    // JSON 파일들을 불러옵니다
     const loadWords = async () => {
       try {
-        const responses = await Promise.all([
-          fetch('/n1/001-100.json'),
-          fetch('/n1/101-200.json'),
-          fetch('/n1/201-300.json'),
-          fetch('/n1/301-400.json'),
-          fetch('/n1/401-500.json')
-        ]);
-        
-        const jsonData = await Promise.all(responses.map(res => res.json()));
-        const allWords = jsonData.flat();
-        setWords(allWords);
+        const response = await fetch(`/n1/${section}.json`);
+        const data = await response.json();
+        setWords(data);
       } catch (error) {
-        console.error('단어 데이터를 불러오는데 실패했습니다:', error);
+        console.error('Error:', error);
       }
     };
-
     loadWords();
-  }, []);
+  }, [section]);
+
+  if (words.length === 0) return null;
+
+  const currentWord = words[currentIndex];
 
   const nextWord = () => {
-    setCurrentWordIndex((prev) => (prev + 1) % words.length);
-    setShowMeaning(false);
+    setCurrentIndex((prev) => (prev + 1) % words.length);
+    setIsFlipped(false);
   };
 
-  const toggleMeaning = () => {
-    setShowMeaning(!showMeaning);
+  const prevWord = () => {
+    setCurrentIndex((prev) => (prev - 1 + words.length) % words.length);
+    setIsFlipped(false);
   };
-
-  if (words.length === 0) return <div>로딩중...</div>;
-
-  const currentWord = words[currentWordIndex];
 
   return (
-    <div className="vocab-study">
-      <div className="card">
-        <h2>{currentWord.word}</h2>
-        <p>{currentWord.reading}</p>
-        <button onClick={toggleMeaning}>
-          {showMeaning ? '뜻 숨기기' : '뜻 보기'}
-        </button>
-        {showMeaning && (
-          <div className="meaning">
-            <p>{currentWord.meaning}</p>
+    <div className="study-container">
+      <button className="back-button" onClick={onBack}>←</button>
+      
+      <div className="counter">{currentIndex + 1} / {words.length}</div>
+      
+      <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={() => setIsFlipped(!isFlipped)}>
+        <div className="front">
+          <div className="content">{currentWord.kanji}</div>
+        </div>
+        <div className="back">
+          <div className="content">
+            <div className="reading">{currentWord.hiragana}</div>
+            <div className="meaning">{currentWord.meaning}</div>
           </div>
-        )}
-        <button onClick={nextWord}>다음 단어</button>
+        </div>
       </div>
-      <div className="progress">
-        {currentWordIndex + 1} / {words.length}
+
+      <div className="buttons">
+        <button onClick={prevWord}>←</button>
+        <button onClick={nextWord}>→</button>
       </div>
     </div>
   );

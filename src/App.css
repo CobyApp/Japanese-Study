@@ -1,38 +1,74 @@
 .App {
+  min-height: 100vh;
+  background: #f4f1de;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 메인 화면 스타일 */
+.main-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.title {
+  font-family: 'Courier New', monospace;
+  font-size: 2.5rem;
+  color: #3d405b;
+  margin-bottom: 3rem;
+  font-weight: bold;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.section-button {
+  background: #fff;
+  border: 3px solid #3d405b;
+  box-shadow: 8px 8px 0 #3d405b;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  font-size: 1.5rem;
+  color: #3d405b;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+}
+
+.section-button:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 #3d405b;
+}
+
+.section-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 6px 6px 0 #3d405b;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .section-buttons {
+    grid-template-columns: 1fr;
+    width: 90%;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .title {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .section-button {
+    font-size: 1.2rem;
+    padding: 1.5rem;
   }
 }
