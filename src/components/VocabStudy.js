@@ -36,6 +36,23 @@ const VocabStudy = ({ section, onBack }) => {
     );
   }
 
+  if (showCompletionPopup) {
+    return (
+      <div className="study-container n1">
+        <div className="popup-overlay" onClick={() => onBack()} />
+        <div className="completion-popup">
+          <div className="popup-content">
+            <h2 className="popup-title">축하합니다! 🎉</h2>
+            <p className="popup-message">모든 단어를 학습하셨습니다!</p>
+            <button className="popup-button" onClick={onBack}>
+              메인으로 돌아가기
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const currentWord = words[remainingWords[currentIndex]];
   const totalKnown = knownWords.size;
   const totalWords = words.length;
@@ -95,21 +112,6 @@ const VocabStudy = ({ section, onBack }) => {
         <button className="unknown-btn" onClick={handleUnknown}>모르겠어요</button>
         <button className="known-btn" onClick={handleKnown}>알고있어요</button>
       </div>
-
-      {showCompletionPopup && (
-        <>
-          <div className="popup-overlay" onClick={() => onBack()} />
-          <div className="completion-popup">
-            <div className="popup-content">
-              <h2 className="popup-title">축하합니다! 🎉</h2>
-              <p className="popup-message">모든 단어를 학습하셨습니다!</p>
-              <button className="popup-button" onClick={onBack}>
-                메인으로 돌아가기
-              </button>
-            </div>
-          </div>
-        </>
-      )}
     </div>
   );
 };

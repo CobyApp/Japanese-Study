@@ -1,0 +1,602 @@
+[
+  {
+    "id": "201",
+    "kanji": "栄養",
+    "hiragana": "えいよう",
+    "meaning": "영양"
+  },
+  {
+    "id": "202",
+    "kanji": "笑顔",
+    "hiragana": "えがお",
+    "meaning": "웃는 얼굴"
+  },
+  {
+    "id": "203",
+    "kanji": "枝",
+    "hiragana": "えだ",
+    "meaning": "가지"
+  },
+  {
+    "id": "204",
+    "kanji": "演奏",
+    "hiragana": "えんそう",
+    "meaning": "연주"
+  },
+  {
+    "id": "205",
+    "kanji": "お祝い",
+    "hiragana": "おいわい",
+    "meaning": "축하"
+  },
+  {
+    "id": "206",
+    "kanji": "応援",
+    "hiragana": "おうえん",
+    "meaning": "응원"
+  },
+  {
+    "id": "207",
+    "kanji": "横断",
+    "hiragana": "おうだん",
+    "meaning": "횡단"
+  },
+  {
+    "id": "208",
+    "kanji": "往復",
+    "hiragana": "おうふく",
+    "meaning": "왕복"
+  },
+  {
+    "id": "209",
+    "kanji": "応募",
+    "hiragana": "おうぼ",
+    "meaning": "응모"
+  },
+  {
+    "id": "210",
+    "kanji": "応用",
+    "hiragana": "おうよう",
+    "meaning": "응용"
+  },
+  {
+    "id": "211",
+    "kanji": "お代わり",
+    "hiragana": "おかわり",
+    "meaning": "한 그릇 더 먹음, 리필"
+  },
+  {
+    "id": "212",
+    "kanji": "お見舞い",
+    "hiragana": "おみまい",
+    "meaning": "병문안"
+  },
+  {
+    "id": "213",
+    "kanji": "温泉",
+    "hiragana": "おんせん",
+    "meaning": "온천"
+  },
+  {
+    "id": "214",
+    "kanji": "会計",
+    "hiragana": "かいけい",
+    "meaning": "회계, 계산"
+  },
+  {
+    "id": "215",
+    "kanji": "改札(口)",
+    "hiragana": "かいさつ(ぐち)",
+    "meaning": "개찰(구)"
+  },
+  {
+    "id": "216",
+    "kanji": "回収",
+    "hiragana": "かいしゅう",
+    "meaning": "회수"
+  },
+  {
+    "id": "217",
+    "kanji": "香り",
+    "hiragana": "かおり",
+    "meaning": "향기"
+  },
+  {
+    "id": "218",
+    "kanji": "各自",
+    "hiragana": "かくじ",
+    "meaning": "각자"
+  },
+  {
+    "id": "219",
+    "kanji": "各地",
+    "hiragana": "かくち",
+    "meaning": "각지"
+  },
+  {
+    "id": "220",
+    "kanji": "確認",
+    "hiragana": "かくにん",
+    "meaning": "확인"
+  },
+  {
+    "id": "221",
+    "kanji": "過去",
+    "hiragana": "かこ",
+    "meaning": "과거"
+  },
+  {
+    "id": "222",
+    "kanji": "数",
+    "hiragana": "かず",
+    "meaning": "수, 숫자"
+  },
+  {
+    "id": "223",
+    "kanji": "下線",
+    "hiragana": "かせん",
+    "meaning": "밑줄"
+  },
+  {
+    "id": "224",
+    "kanji": "肩",
+    "hiragana": "かた",
+    "meaning": "어깨 명"
+  },
+  {
+    "id": "225",
+    "kanji": "形",
+    "hiragana": "かたち",
+    "meaning": "형태, 모양"
+  },
+  {
+    "id": "226",
+    "kanji": "片方",
+    "hiragana": "かたほう",
+    "meaning": "한쪽"
+  },
+  {
+    "id": "227",
+    "kanji": "片道",
+    "hiragana": "かたみち",
+    "meaning": "편도"
+  },
+  {
+    "id": "228",
+    "kanji": "価値",
+    "hiragana": "かち",
+    "meaning": "가치"
+  },
+  {
+    "id": "229",
+    "kanji": "活気",
+    "hiragana": "かっき",
+    "meaning": "활기"
+  },
+  {
+    "id": "230",
+    "kanji": "楽器",
+    "hiragana": "がっき",
+    "meaning": "악기"
+  },
+  {
+    "id": "231",
+    "kanji": "活動",
+    "hiragana": "かつどう",
+    "meaning": "활동"
+  },
+  {
+    "id": "232",
+    "kanji": "仮定",
+    "hiragana": "かてい",
+    "meaning": "가정"
+  },
+  {
+    "id": "233",
+    "kanji": "我慢",
+    "hiragana": "がまん",
+    "meaning": "참음"
+  },
+  {
+    "id": "234",
+    "kanji": "(내용물이",
+    "hiragana": "없이",
+    "meaning": "속이) 빔 ,"
+  },
+  {
+    "id": "235",
+    "kanji": "皮",
+    "hiragana": "かわ",
+    "meaning": "껍질, 가죽"
+  },
+  {
+    "id": "236",
+    "kanji": "間隔",
+    "hiragana": "かんかく",
+    "meaning": "간격"
+  },
+  {
+    "id": "237",
+    "kanji": "感覚",
+    "hiragana": "かんかく",
+    "meaning": "감각"
+  },
+  {
+    "id": "238",
+    "kanji": "観客",
+    "hiragana": "かんきゃく",
+    "meaning": "관객"
+  },
+  {
+    "id": "239",
+    "kanji": "環境",
+    "hiragana": "かんきょう",
+    "meaning": "환경"
+  },
+  {
+    "id": "240",
+    "kanji": "関係",
+    "hiragana": "かんけい",
+    "meaning": "관계"
+  },
+  {
+    "id": "241",
+    "kanji": "感激",
+    "hiragana": "かんげき",
+    "meaning": "감격"
+  },
+  {
+    "id": "242",
+    "kanji": "観光",
+    "hiragana": "かんこう",
+    "meaning": "관광"
+  },
+  {
+    "id": "243",
+    "kanji": "観察",
+    "hiragana": "かんさつ",
+    "meaning": "관찰"
+  },
+  {
+    "id": "244",
+    "kanji": "関心",
+    "hiragana": "かんしん",
+    "meaning": "관심"
+  },
+  {
+    "id": "245",
+    "kanji": "完成",
+    "hiragana": "かんせい",
+    "meaning": "완성"
+  },
+  {
+    "id": "246",
+    "kanji": "機械",
+    "hiragana": "きかい",
+    "meaning": "기계"
+  },
+  {
+    "id": "247",
+    "kanji": "機会",
+    "hiragana": "きかい",
+    "meaning": "기회"
+  },
+  {
+    "id": "248",
+    "kanji": "期限",
+    "hiragana": "きげん",
+    "meaning": "기한"
+  },
+  {
+    "id": "249",
+    "kanji": "技術",
+    "hiragana": "ぎじゅつ",
+    "meaning": "기술"
+  },
+  {
+    "id": "250",
+    "kanji": "傷",
+    "hiragana": "きず",
+    "meaning": "상처"
+  },
+  {
+    "id": "251",
+    "kanji": "基礎",
+    "hiragana": "きそ",
+    "meaning": "기초"
+  },
+  {
+    "id": "252",
+    "kanji": "規則",
+    "hiragana": "きそく",
+    "meaning": "규칙"
+  },
+  {
+    "id": "253",
+    "kanji": "期待",
+    "hiragana": "きたい",
+    "meaning": "기대"
+  },
+  {
+    "id": "254",
+    "kanji": "帰宅",
+    "hiragana": "きたく",
+    "meaning": "귀가"
+  },
+  {
+    "id": "255",
+    "kanji": "切手",
+    "hiragana": "きって",
+    "meaning": "우표"
+  },
+  {
+    "id": "256",
+    "kanji": "記念",
+    "hiragana": "きねん",
+    "meaning": "기념 명"
+  },
+  {
+    "id": "257",
+    "kanji": "基本",
+    "hiragana": "きほん",
+    "meaning": "기본"
+  },
+  {
+    "id": "258",
+    "kanji": "逆",
+    "hiragana": "ぎゃく",
+    "meaning": "반대, 거꾸로임"
+  },
+  {
+    "id": "259",
+    "kanji": "休日",
+    "hiragana": "きゅうじつ",
+    "meaning": "휴일"
+  },
+  {
+    "id": "260",
+    "kanji": "教師",
+    "hiragana": "きょうし",
+    "meaning": "교사"
+  },
+  {
+    "id": "261",
+    "kanji": "競争",
+    "hiragana": "きょうそう",
+    "meaning": "경쟁"
+  },
+  {
+    "id": "262",
+    "kanji": "共通",
+    "hiragana": "きょうつう",
+    "meaning": "공통"
+  },
+  {
+    "id": "263",
+    "kanji": "興味",
+    "hiragana": "きょうみ",
+    "meaning": "흥미"
+  },
+  {
+    "id": "264",
+    "kanji": "協力",
+    "hiragana": "きょうりょく",
+    "meaning": "협력"
+  },
+  {
+    "id": "265",
+    "kanji": "距離",
+    "hiragana": "きょり",
+    "meaning": "거리"
+  },
+  {
+    "id": "266",
+    "kanji": "記録",
+    "hiragana": "きろく",
+    "meaning": "기록"
+  },
+  {
+    "id": "267",
+    "kanji": "禁煙",
+    "hiragana": "きんえん",
+    "meaning": "금연"
+  },
+  {
+    "id": "268",
+    "kanji": "禁止",
+    "hiragana": "きんし",
+    "meaning": "금지"
+  },
+  {
+    "id": "269",
+    "kanji": "首",
+    "hiragana": "くび",
+    "meaning": "목"
+  },
+  {
+    "id": "270",
+    "kanji": "工夫",
+    "hiragana": "くふう",
+    "meaning": "고안, 궁리"
+  },
+  {
+    "id": "271",
+    "kanji": "区分",
+    "hiragana": "くぶん",
+    "meaning": "구분"
+  },
+  {
+    "id": "272",
+    "kanji": "区別",
+    "hiragana": "くべつ",
+    "meaning": "구별"
+  },
+  {
+    "id": "273",
+    "kanji": "訓練",
+    "hiragana": "くんれん",
+    "meaning": "훈련"
+  },
+  {
+    "id": "274",
+    "kanji": "経営",
+    "hiragana": "けいえい",
+    "meaning": "경영"
+  },
+  {
+    "id": "275",
+    "kanji": "計画",
+    "hiragana": "けいかく",
+    "meaning": "계획"
+  },
+  {
+    "id": "276",
+    "kanji": "経験",
+    "hiragana": "けいけん",
+    "meaning": "경험"
+  },
+  {
+    "id": "277",
+    "kanji": "経済",
+    "hiragana": "けいざい",
+    "meaning": "경제"
+  },
+  {
+    "id": "278",
+    "kanji": "計算",
+    "hiragana": "けいさん",
+    "meaning": "계산"
+  },
+  {
+    "id": "279",
+    "kanji": "経由",
+    "hiragana": "けいゆ",
+    "meaning": "경유"
+  },
+  {
+    "id": "280",
+    "kanji": "外科",
+    "hiragana": "げか",
+    "meaning": "외과"
+  },
+  {
+    "id": "281",
+    "kanji": "景色",
+    "hiragana": "けしき",
+    "meaning": "경치"
+  },
+  {
+    "id": "282",
+    "kanji": "血液",
+    "hiragana": "けつえき",
+    "meaning": "혈액"
+  },
+  {
+    "id": "283",
+    "kanji": "欠席",
+    "hiragana": "けっせき",
+    "meaning": "결석"
+  },
+  {
+    "id": "284",
+    "kanji": "欠点",
+    "hiragana": "けってん",
+    "meaning": "결점"
+  },
+  {
+    "id": "285",
+    "kanji": "煙",
+    "hiragana": "けむり",
+    "meaning": "연기"
+  },
+  {
+    "id": "286",
+    "kanji": "原因",
+    "hiragana": "げんいん",
+    "meaning": "원인"
+  },
+  {
+    "id": "287",
+    "kanji": "研究",
+    "hiragana": "けんきゅう",
+    "meaning": "연구"
+  },
+  {
+    "id": "288",
+    "kanji": "現金",
+    "hiragana": "げんきん",
+    "meaning": "현금 명"
+  },
+  {
+    "id": "289",
+    "kanji": "健康",
+    "hiragana": "けんこう",
+    "meaning": "건강"
+  },
+  {
+    "id": "290",
+    "kanji": "検査",
+    "hiragana": "けんさ",
+    "meaning": "검사"
+  },
+  {
+    "id": "291",
+    "kanji": "現在",
+    "hiragana": "げんざい",
+    "meaning": "현재"
+  },
+  {
+    "id": "292",
+    "kanji": "減少",
+    "hiragana": "げんしょう",
+    "meaning": "감소"
+  },
+  {
+    "id": "293",
+    "kanji": "建設",
+    "hiragana": "けんせつ",
+    "meaning": "건설"
+  },
+  {
+    "id": "294",
+    "kanji": "見物",
+    "hiragana": "けんぶつ",
+    "meaning": "구경"
+  },
+  {
+    "id": "295",
+    "kanji": "原料",
+    "hiragana": "げんりょう",
+    "meaning": "원료"
+  },
+  {
+    "id": "296",
+    "kanji": "講演",
+    "hiragana": "こうえん",
+    "meaning": "강연"
+  },
+  {
+    "id": "297",
+    "kanji": "効果",
+    "hiragana": "こうか",
+    "meaning": "효과 さ행"
+  },
+  {
+    "id": "298",
+    "kanji": "合計",
+    "hiragana": "ごうけい",
+    "meaning": "합계"
+  },
+  {
+    "id": "299",
+    "kanji": "広告",
+    "hiragana": "こうこく",
+    "meaning": "광고"
+  },
+  {
+    "id": "300",
+    "kanji": "交代",
+    "hiragana": "こうたい",
+    "meaning": "교대"
+  }
+] 

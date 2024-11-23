@@ -1,0 +1,602 @@
+[
+  {
+    "id": "401",
+    "kanji": "俳優",
+    "hiragana": "はいゆう",
+    "meaning": "배우"
+  },
+  {
+    "id": "402",
+    "kanji": "配慮",
+    "hiragana": "はいりょ",
+    "meaning": "배려"
+  },
+  {
+    "id": "403",
+    "kanji": "破壊",
+    "hiragana": "はかい",
+    "meaning": "파괴"
+  },
+  {
+    "id": "404",
+    "kanji": "肌",
+    "hiragana": "はだ",
+    "meaning": "피부"
+  },
+  {
+    "id": "405",
+    "kanji": "発揮",
+    "hiragana": "はっき",
+    "meaning": "발휘"
+  },
+  {
+    "id": "406",
+    "kanji": "発行",
+    "hiragana": "はっこう",
+    "meaning": "발행"
+  },
+  {
+    "id": "407",
+    "kanji": "発送",
+    "hiragana": "はっそう",
+    "meaning": "발송"
+  },
+  {
+    "id": "408",
+    "kanji": "発売",
+    "hiragana": "はつばい",
+    "meaning": "발매"
+  },
+  {
+    "id": "409",
+    "kanji": "幅",
+    "hiragana": "はば",
+    "meaning": "폭"
+  },
+  {
+    "id": "410",
+    "kanji": "範囲",
+    "hiragana": "はんい",
+    "meaning": "범위"
+  },
+  {
+    "id": "411",
+    "kanji": "反映",
+    "hiragana": "はんえい",
+    "meaning": "반영"
+  },
+  {
+    "id": "412",
+    "kanji": "半額",
+    "hiragana": "はんがく",
+    "meaning": "반액"
+  },
+  {
+    "id": "413",
+    "kanji": "半減",
+    "hiragana": "はんげん",
+    "meaning": "반감"
+  },
+  {
+    "id": "414",
+    "kanji": "判断",
+    "hiragana": "はんだん",
+    "meaning": "판단"
+  },
+  {
+    "id": "415",
+    "kanji": "反応",
+    "hiragana": "はんのう",
+    "meaning": "반응"
+  },
+  {
+    "id": "416",
+    "kanji": "販売",
+    "hiragana": "はんばい",
+    "meaning": "판매"
+  },
+  {
+    "id": "417",
+    "kanji": "筆者",
+    "hiragana": "ひっしゃ",
+    "meaning": "필자"
+  },
+  {
+    "id": "418",
+    "kanji": "飛躍的",
+    "hiragana": "ひやくてき",
+    "meaning": "비약적"
+  },
+  {
+    "id": "419",
+    "kanji": "費用",
+    "hiragana": "ひよう",
+    "meaning": "비용"
+  },
+  {
+    "id": "420",
+    "kanji": "評価",
+    "hiragana": "ひょうか",
+    "meaning": "평가"
+  },
+  {
+    "id": "421",
+    "kanji": "風景",
+    "hiragana": "ふうけい",
+    "meaning": "풍경"
+  },
+  {
+    "id": "422",
+    "kanji": "不可欠",
+    "hiragana": "ふかけつ",
+    "meaning": "불가결"
+  },
+  {
+    "id": "423",
+    "kanji": "不足",
+    "hiragana": "ふそく",
+    "meaning": "부족"
+  },
+  {
+    "id": "424",
+    "kanji": "負担",
+    "hiragana": "ふたん",
+    "meaning": "부담"
+  },
+  {
+    "id": "425",
+    "kanji": "普遍的",
+    "hiragana": "ふへんてき",
+    "meaning": "보편적"
+  },
+  {
+    "id": "426",
+    "kanji": "不良品",
+    "hiragana": "ふりょうひん",
+    "meaning": "불량품"
+  },
+  {
+    "id": "427",
+    "kanji": "分析",
+    "hiragana": "ぶんせき",
+    "meaning": "분석"
+  },
+  {
+    "id": "428",
+    "kanji": "弊社",
+    "hiragana": "へいしゃ",
+    "meaning": "자기 회사의 겸칭"
+  },
+  {
+    "id": "429",
+    "kanji": "平和",
+    "hiragana": "へいわ",
+    "meaning": "평화 사"
+  },
+  {
+    "id": "430",
+    "kanji": "変換",
+    "hiragana": "へんかん",
+    "meaning": "변환"
+  },
+  {
+    "id": "431",
+    "kanji": "変更",
+    "hiragana": "へんこう",
+    "meaning": "변경"
+  },
+  {
+    "id": "432",
+    "kanji": "法律",
+    "hiragana": "ほうりつ",
+    "meaning": "법률"
+  },
+  {
+    "id": "433",
+    "kanji": "保護者",
+    "hiragana": "ほごしゃ",
+    "meaning": "보호자"
+  },
+  {
+    "id": "434",
+    "kanji": "募集",
+    "hiragana": "ぼしゅう",
+    "meaning": "모집"
+  },
+  {
+    "id": "435",
+    "kanji": "本質",
+    "hiragana": "ほんしつ",
+    "meaning": "본질"
+  },
+  {
+    "id": "436",
+    "kanji": "本物",
+    "hiragana": "ほんもの",
+    "meaning": "진짜, 실물, 전문가"
+  },
+  {
+    "id": "437",
+    "kanji": "見た目",
+    "hiragana": "みため",
+    "meaning": "겉모습"
+  },
+  {
+    "id": "438",
+    "kanji": "魅力",
+    "hiragana": "みりょく",
+    "meaning": "매력"
+  },
+  {
+    "id": "439",
+    "kanji": "名刺",
+    "hiragana": "めいし",
+    "meaning": "명함"
+  },
+  {
+    "id": "440",
+    "kanji": "模型",
+    "hiragana": "もけい",
+    "meaning": "모형"
+  },
+  {
+    "id": "441",
+    "kanji": "模範",
+    "hiragana": "もはん",
+    "meaning": "모범"
+  },
+  {
+    "id": "442",
+    "kanji": "遊園地",
+    "hiragana": "ゆうえんち",
+    "meaning": "유원지"
+  },
+  {
+    "id": "443",
+    "kanji": "有効",
+    "hiragana": "ゆうこう",
+    "meaning": "유효 부사"
+  },
+  {
+    "id": "444",
+    "kanji": "優勝",
+    "hiragana": "ゆうしょう",
+    "meaning": "우승 あ행 부"
+  },
+  {
+    "id": "445",
+    "kanji": "夢",
+    "hiragana": "ゆめ",
+    "meaning": "꿈"
+  },
+  {
+    "id": "446",
+    "kanji": "要求",
+    "hiragana": "ようきゅう",
+    "meaning": "요구"
+  },
+  {
+    "id": "447",
+    "kanji": "様子",
+    "hiragana": "ようす",
+    "meaning": "모습, 모양"
+  },
+  {
+    "id": "448",
+    "kanji": "世の中",
+    "hiragana": "よのなか",
+    "meaning": "세상"
+  },
+  {
+    "id": "449",
+    "kanji": "余裕",
+    "hiragana": "よゆう",
+    "meaning": "여유"
+  },
+  {
+    "id": "450",
+    "kanji": "楽天的",
+    "hiragana": "らくてんてき",
+    "meaning": "낙천적"
+  },
+  {
+    "id": "451",
+    "kanji": "利益",
+    "hiragana": "りえき",
+    "meaning": "이익"
+  },
+  {
+    "id": "452",
+    "kanji": "利点",
+    "hiragana": "りてん",
+    "meaning": "이점"
+  },
+  {
+    "id": "453",
+    "kanji": "歴史",
+    "hiragana": "れきし",
+    "meaning": "역사"
+  },
+  {
+    "id": "454",
+    "kanji": "割引",
+    "hiragana": "わりびき",
+    "meaning": "할인"
+  },
+  {
+    "id": "455",
+    "kanji": "相変わらず",
+    "hiragana": "あいかわらず",
+    "meaning": "변함없이"
+  },
+  {
+    "id": "456",
+    "kanji": "相次いで",
+    "hiragana": "あいついで",
+    "meaning": "잇따라"
+  },
+  {
+    "id": "457",
+    "kanji": "改めて",
+    "hiragana": "あらためて",
+    "meaning": "다시, 재차"
+  },
+  {
+    "id": "458",
+    "kanji": "案外",
+    "hiragana": "あんがい",
+    "meaning": "의외로"
+  },
+  {
+    "id": "459",
+    "kanji": "生き生き",
+    "hiragana": "いきいき",
+    "meaning": "생생한 모양, 활기찬 모양"
+  },
+  {
+    "id": "460",
+    "kanji": "一応",
+    "hiragana": "いちおう",
+    "meaning": "일단"
+  },
+  {
+    "id": "461",
+    "kanji": "一斉に",
+    "hiragana": "いっせいに",
+    "meaning": "일제히"
+  },
+  {
+    "id": "462",
+    "kanji": "一体",
+    "hiragana": "いったい",
+    "meaning": "대체"
+  },
+  {
+    "id": "463",
+    "kanji": "今にも",
+    "hiragana": "いまにも",
+    "meaning": "금방이라도"
+  },
+  {
+    "id": "464",
+    "kanji": "大いに",
+    "hiragana": "おおいに",
+    "meaning": "크게, 매우"
+  },
+  {
+    "id": "465",
+    "kanji": "各々",
+    "hiragana": "おのおの",
+    "meaning": "각각"
+  },
+  {
+    "id": "466",
+    "kanji": "思わず",
+    "hiragana": "おもわず",
+    "meaning": "무심코"
+  },
+  {
+    "id": "467",
+    "kanji": "必ず",
+    "hiragana": "かならず",
+    "meaning": "반드시, 꼭"
+  },
+  {
+    "id": "468",
+    "kanji": "必ずしも",
+    "hiragana": "かならずしも",
+    "meaning": "반드시 ~인 것은 아니다"
+  },
+  {
+    "id": "469",
+    "kanji": "偶然",
+    "hiragana": "ぐうぜん",
+    "meaning": "우연히 た행"
+  },
+  {
+    "id": "470",
+    "kanji": "幸いに",
+    "hiragana": "さいわいに",
+    "meaning": "다행히"
+  },
+  {
+    "id": "471",
+    "kanji": "先ほど",
+    "hiragana": "さきほど",
+    "meaning": "아까, 먼저"
+  },
+  {
+    "id": "472",
+    "kanji": "早速",
+    "hiragana": "さっそく",
+    "meaning": "즉시, 조속히"
+  },
+  {
+    "id": "473",
+    "kanji": "様々",
+    "hiragana": "さまざま",
+    "meaning": "여러 가지"
+  },
+  {
+    "id": "474",
+    "kanji": "強いて",
+    "hiragana": "しいて",
+    "meaning": "굳이, 구태여"
+  },
+  {
+    "id": "475",
+    "kanji": "直に",
+    "hiragana": "じかに",
+    "meaning": "직접"
+  },
+  {
+    "id": "476",
+    "kanji": "次第に",
+    "hiragana": "しだいに",
+    "meaning": "점점, 순차적으로"
+  },
+  {
+    "id": "477",
+    "kanji": "実に",
+    "hiragana": "じつに",
+    "meaning": "실제로"
+  },
+  {
+    "id": "478",
+    "kanji": "十分",
+    "hiragana": "じゅうぶん",
+    "meaning": "충분"
+  },
+  {
+    "id": "479",
+    "kanji": "徐々に",
+    "hiragana": "じょじょに",
+    "meaning": "서서히"
+  },
+  {
+    "id": "480",
+    "kanji": "少なくとも",
+    "hiragana": "すくなくとも",
+    "meaning": "적어도"
+  },
+  {
+    "id": "481",
+    "kanji": "絶対に",
+    "hiragana": "ぜったいに",
+    "meaning": "절대로"
+  },
+  {
+    "id": "482",
+    "kanji": "相当",
+    "hiragana": "そうとう",
+    "meaning": "상당히"
+  },
+  {
+    "id": "483",
+    "kanji": "続々",
+    "hiragana": "ぞくぞく",
+    "meaning": "속속, 계속해서"
+  },
+  {
+    "id": "484",
+    "kanji": "大抵",
+    "hiragana": "たいてい",
+    "meaning": "대체로 사"
+  },
+  {
+    "id": "485",
+    "kanji": "絶えず",
+    "hiragana": "たえず",
+    "meaning": "끊임없이"
+  },
+  {
+    "id": "486",
+    "kanji": "多少",
+    "hiragana": "たしょう",
+    "meaning": "다소"
+  },
+  {
+    "id": "487",
+    "kanji": "直ちに",
+    "hiragana": "ただちに",
+    "meaning": "금새"
+  },
+  {
+    "id": "488",
+    "kanji": "単なる",
+    "hiragana": "たんなる",
+    "meaning": "단순한"
+  },
+  {
+    "id": "489",
+    "kanji": "着々",
+    "hiragana": "ちゃくちゃく",
+    "meaning": "착착"
+  },
+  {
+    "id": "490",
+    "kanji": "常に",
+    "hiragana": "つねに",
+    "meaning": "항상, 언제나"
+  },
+  {
+    "id": "491",
+    "kanji": "突然",
+    "hiragana": "とつぜん",
+    "meaning": "돌연, 갑자기"
+  },
+  {
+    "id": "492",
+    "kanji": "何しろ",
+    "hiragana": "なにしろ",
+    "meaning": "아무튼, 어쨌든"
+  },
+  {
+    "id": "493",
+    "kanji": "何とか",
+    "hiragana": "なんとか",
+    "meaning": "뭐라고, 어떻게든"
+  },
+  {
+    "id": "494",
+    "kanji": "果たして",
+    "hiragana": "はたして",
+    "meaning": "과연"
+  },
+  {
+    "id": "495",
+    "kanji": "再び",
+    "hiragana": "ふたたび",
+    "meaning": "다시, 재차"
+  },
+  {
+    "id": "496",
+    "kanji": "別々",
+    "hiragana": "べつべつ",
+    "meaning": "따로따로"
+  },
+  {
+    "id": "497",
+    "kanji": "全く",
+    "hiragana": "まったく",
+    "meaning": "전혀"
+  },
+  {
+    "id": "498",
+    "kanji": "最も",
+    "hiragana": "もっとも",
+    "meaning": "가장"
+  },
+  {
+    "id": "499",
+    "kanji": "元々",
+    "hiragana": "もともと",
+    "meaning": "원래"
+  },
+  {
+    "id": "500",
+    "kanji": "余計",
+    "hiragana": "よけい",
+    "meaning": "한층 더, 더욱"
+  }
+] 
