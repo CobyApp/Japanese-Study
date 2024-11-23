@@ -66,7 +66,12 @@ const VocabStudy = ({ section, onBack }) => {
         <div className="front">
           <span className="card-number">#{currentWord.id}</span>
           <span className="remaining-count">{remainingWords.length}</span>
-          <div className="content">{currentWord.kanji}</div>
+          <div 
+            className="content" 
+            data-length={currentWord.kanji.length}
+          >
+            {currentWord.kanji}
+          </div>
         </div>
         <div className="back">
           <div className="content">

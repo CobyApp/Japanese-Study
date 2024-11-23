@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  background: #f8f9fa;
+  background: #ff7043;
+  background: linear-gradient(135deg, #ff7043 0%, #ff9a76 100%);
   padding: 2rem;
   position: relative;
 }
@@ -14,24 +15,24 @@
   position: fixed;
   top: 2rem;
   left: 2rem;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border: none;
-  background: white;
-  color: #212529;
+  background: rgba(255,255,255,0.95);
+  color: #ff7043;
   font-size: 1.2rem;
   cursor: pointer;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .back-button:hover {
-  transform: translateX(-3px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.1);
 }
 
 .card {
@@ -41,6 +42,8 @@
   cursor: pointer;
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .card.flipped {
@@ -56,9 +59,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 24px;
-  background: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 12px 0 rgba(0,0,0,0.1);
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .back {
@@ -69,12 +74,26 @@
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  color: #6c757d;
-  background: #f8f9fa;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  color: #ff7043;
+  background: rgba(255, 112, 67, 0.1);
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.remaining-count {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  color: #ff7043;
+  background: rgba(255, 112, 67, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
 }
 
 .content {
@@ -84,10 +103,27 @@
 }
 
 .front .content {
-  font-size: 5.5rem;
+  font-size: clamp(2rem, 5.5rem, 5.5rem);
   font-family: 'Noto Serif JP', serif;
-  color: #212529;
+  color: #333;
+  width: 90%;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
 }
+
+.front .content[data-length="1"] { font-size: 5.5rem; }
+.front .content[data-length="2"] { font-size: 5rem; }
+.front .content[data-length="3"] { font-size: 4.5rem; }
+.front .content[data-length="4"] { font-size: 4rem; }
+.front .content[data-length="5"] { font-size: 3.5rem; }
+.front .content[data-length="6"] { font-size: 3rem; }
+.front .content[data-length="7"] { font-size: 2.5rem; }
+.front .content[data-length="8"] { font-size: 2rem; }
 
 .back .content {
   display: flex;
@@ -97,14 +133,14 @@
 
 .reading {
   font-size: 2.8rem;
-  font-family: 'Noto Sans JP', sans-serif;
-  color: #228be6;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: #ff7043;
 }
 
 .meaning {
   font-size: 1.8rem;
-  font-family: 'Noto Sans KR', sans-serif;
-  color: #212529;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: #333;
   line-height: 1.5;
 }
 
@@ -115,68 +151,89 @@
 
 .known-btn, .unknown-btn {
   padding: 1rem 2.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 1rem;
   border: none;
-  border-radius: 12px;
+  border-radius: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
+  transition: all 0.2s ease;
+  font-weight: 700;
   min-width: 160px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.1);
 }
 
 .known-btn {
-  background: #40c057;
-  color: white;
+  color: #2ecc71;
 }
 
 .unknown-btn {
-  background: #fa5252;
-  color: white;
+  color: #e74c3c;
 }
 
 .known-btn:hover, .unknown-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 9px 0 rgba(0,0,0,0.1);
 }
 
-.remaining-count {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  color: #6c757d;
-  background: #f8f9fa;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+.known-btn:active, .unknown-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 rgba(0,0,0,0.1);
 }
 
 @media (max-width: 480px) {
-  .card {
-    width: 320px;
-    height: 420px;
+  .study-container {
+    padding: 1rem;
   }
 
-  .front .content {
-    font-size: 4.5rem;
+  .back-button {
+    top: 1rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
   }
+
+  .card {
+    width: 300px;
+    height: 400px;
+  }
+
+  .front .content[data-length="1"] { font-size: 4.5rem; }
+  .front .content[data-length="2"] { font-size: 4rem; }
+  .front .content[data-length="3"] { font-size: 3.5rem; }
+  .front .content[data-length="4"] { font-size: 3rem; }
+  .front .content[data-length="5"] { font-size: 2.5rem; }
+  .front .content[data-length="6"] { font-size: 2rem; }
+  .front .content[data-length="7"] { font-size: 1.8rem; }
+  .front .content[data-length="8"] { font-size: 1.6rem; }
 
   .reading {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .meaning {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .answer-buttons {
     flex-direction: column;
-    width: 100%;
+    width: 90%;
+    gap: 1rem;
   }
 
   .known-btn, .unknown-btn {
     width: 100%;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    width: 280px;
+    height: 380px;
+  }
+
+  .front .content {
+    font-size: 3.5rem;
   }
 } 
