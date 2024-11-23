@@ -8,22 +8,33 @@ const VocabStudy = ({ section, onBack }) => {
   const [knownWords, setKnownWords] = useState(new Set());
   const [remainingWords, setRemainingWords] = useState([]);
   const [cycle, setCycle] = useState(1);
+  const [showCompletionPopup, setShowCompletionPopup] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadWords = async () => {
       try {
+        setIsLoading(true);
         const response = await fetch(`/n1/${section}.json`);
         const data = await response.json();
         setWords(data);
         setRemainingWords(data.map((_, index) => index));
       } catch (error) {
         console.error('Error:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
     loadWords();
   }, [section]);
 
-  if (words.length === 0) return null;
+  if (isLoading || words.length === 0) {
+    return (
+      <div className="study-container n1">
+        <div className="loading">Loading...</div>
+      </div>
+    );
+  }
 
   const currentWord = words[remainingWords[currentIndex]];
   const totalKnown = knownWords.size;
@@ -36,8 +47,7 @@ const VocabStudy = ({ section, onBack }) => {
     
     if (newRemaining.length === 0) {
       if (knownWords.size === totalWords) {
-        alert('축하합니다! 모든 단어를 학습하셨습니다! 🎉');
-        onBack();
+        setShowCompletionPopup(true);
         return;
       }
       const unknownWords = words
@@ -59,7 +69,7 @@ const VocabStudy = ({ section, onBack }) => {
   };
 
   return (
-    <div className="study-container">
+    <div className={`study-container n1`}>
       <button className="back-button" onClick={onBack}>←</button>
       
       <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={() => setIsFlipped(!isFlipped)}>
@@ -85,6 +95,21 @@ const VocabStudy = ({ section, onBack }) => {
         <button className="unknown-btn" onClick={handleUnknown}>모르겠어요</button>
         <button className="known-btn" onClick={handleKnown}>알고있어요</button>
       </div>
+
+      {showCompletionPopup && (
+        <>
+          <div className="popup-overlay" onClick={() => onBack()} />
+          <div className="completion-popup">
+            <div className="popup-content">
+              <h2 className="popup-title">축하합니다! 🎉</h2>
+              <p className="popup-message">모든 단어를 학습하셨습니다!</p>
+              <button className="popup-button" onClick={onBack}>
+                메인으로 돌아가기
+              </button>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

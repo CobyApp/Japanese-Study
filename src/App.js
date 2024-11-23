@@ -6,11 +6,11 @@ function App() {
   const [selectedSection, setSelectedSection] = useState(null);
 
   const n1Sections = [
-    { id: '001-100', name: '001-100' },
-    { id: '101-200', name: '101-200' },
-    { id: '201-300', name: '201-300' },
-    { id: '301-400', name: '301-400' },
-    { id: '401-500', name: '401-500' },
+    { id: '001-100', name: 'Stage 1' },
+    { id: '101-200', name: 'Stage 2' },
+    { id: '201-300', name: 'Stage 3' },
+    { id: '301-400', name: 'Stage 4' },
+    { id: '401-500', name: 'Stage 5' },
   ];
 
   if (selectedSection) {
@@ -31,7 +31,8 @@ function App() {
                 onClick={() => setSelectedSection(section.id)}
                 className="section-button"
               >
-                {section.name}
+                <span>Stage</span>
+                <span>{section.name.split(' ')[1]}</span>
               </button>
             ))}
           </div>

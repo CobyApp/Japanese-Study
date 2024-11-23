@@ -5,10 +5,24 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  background: #ff7043;
-  background: linear-gradient(135deg, #ff7043 0%, #ff9a76 100%);
+  background: #ff6b6b;
   padding: 2rem;
   position: relative;
+}
+
+.study-container.n1 {
+  background: #ff6b6b;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa8a8 100%);
+}
+
+.study-container.n2 {
+  background: #4dabf7;
+  background: linear-gradient(135deg, #4dabf7 0%, #74c0fc 100%);
+}
+
+.study-container.n3 {
+  background: #51cf66;
+  background: linear-gradient(135deg, #51cf66 0%, #8ce99a 100%);
 }
 
 .back-button {
@@ -235,5 +249,95 @@
 
   .front .content {
     font-size: 3.5rem;
+  }
+}
+
+.completion-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.popup-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.popup-message {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.popup-button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.popup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+@keyframes popIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 모바일 대응 */
+@media (max-width: 480px) {
+  .completion-popup {
+    width: 85%;
+    padding: 1.5rem;
+  }
+
+  .popup-title {
+    font-size: 1.5rem;
+  }
+
+  .popup-message {
+    font-size: 1rem;
   }
 } 
