@@ -40,7 +40,6 @@ const VocabStudy = ({ section, onBack }) => {
         onBack();
         return;
       }
-      // 새로운 사이클 시작
       const unknownWords = words
         .map((_, idx) => idx)
         .filter(idx => !knownWords.has(idx));
@@ -63,28 +62,13 @@ const VocabStudy = ({ section, onBack }) => {
     <div className="study-container">
       <button className="back-button" onClick={onBack}>←</button>
       
-      <div className="stats">
-        <div className="cycle">
-          <span className="stats-label">사이클</span>
-          <span className="stats-value">{cycle}</span>
-        </div>
-        <div className="progress">
-          <span className="stats-label">진행도</span>
-          <span className="stats-value">{totalKnown} / {totalWords}</span>
-        </div>
-        <div className="remaining">
-          <span className="stats-label">남은 단어</span>
-          <span className="stats-value">{remainingWords.length}</span>
-        </div>
-      </div>
-      
       <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={() => setIsFlipped(!isFlipped)}>
         <div className="front">
           <span className="card-number">#{currentWord.id}</span>
+          <span className="remaining-count">{remainingWords.length}</span>
           <div className="content">{currentWord.kanji}</div>
         </div>
         <div className="back">
-          <span className="card-number">#{currentWord.id}</span>
           <div className="content">
             <div className="reading">{currentWord.hiragana}</div>
             <div className="meaning">{currentWord.meaning}</div>
