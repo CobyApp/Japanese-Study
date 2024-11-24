@@ -49,6 +49,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  min-width: 280px;
 }
 
 .progress-bar {
@@ -72,6 +73,8 @@
   color: #666;
   font-size: 0.9rem;
   font-weight: 500;
+  min-width: 50px;
+  text-align: right;
 }
 
 .study-content {
@@ -226,6 +229,12 @@
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  width: 90%;
+}
+
+.completed-header {
+  margin-bottom: 3rem;
 }
 
 .completed-icon {
@@ -234,70 +243,125 @@
 }
 
 .completed h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #1a1a1a;
   margin-bottom: 1rem;
 }
 
 .completed-message {
+  font-size: 1.2rem;
   color: #666;
+}
+
+.missed-words-section {
+  margin: 0 0 3rem;
+}
+
+.missed-words-section h3 {
+  font-size: 1.3rem;
+  color: #1a1a1a;
   margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.missed-words-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.missed-word-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.missed-word-card:hover {
+  transform: translateY(-2px);
+}
+
+.missed-count-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.missed-word-content {
+  margin-top: 0.5rem;
+}
+
+.missed-word-kanji {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.missed-word-reading {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.missed-word-meaning {
+  font-size: 1rem;
+  color: #868e96;
+}
+
+.completed-buttons {
+  margin-top: 2rem;
 }
 
 .completed button {
-  padding: 1rem 2rem;
-  background: #4dabf7;
-  color: white;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
   border: none;
   border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-weight: 500;
+  color: white;
 }
 
-.completed button:hover {
-  transform: translateY(-2px);
-  background: #3b9ceb;
-}
+.vocab-study[data-level="n1"] .completed button { background: #ff6b6b; }
+.vocab-study[data-level="n2"] .completed button { background: #4dabf7; }
+.vocab-study[data-level="n3"] .completed button { background: #51cf66; }
+
+.vocab-study[data-level="n1"] .missed-count-badge { color: #ff6b6b; }
+.vocab-study[data-level="n2"] .missed-count-badge { color: #4dabf7; }
+.vocab-study[data-level="n3"] .missed-count-badge { color: #51cf66; }
 
 @media (max-width: 768px) {
-  .study-header {
-    padding: 1rem;
+  .completed {
+    padding: 2rem;
   }
 
-  .study-content {
-    padding: 1rem;
+  .missed-words-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
-  .card-word {
-    font-size: 3.5rem;
-  }
-
-  .card-reading {
-    font-size: 2rem;
-  }
-
-  .card-meaning {
-    font-size: 1.5rem;
+  .missed-word-card {
+    padding: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .study-content {
-    padding: 1rem;
+  .missed-words-grid {
+    grid-template-columns: 1fr;
   }
 
-  .card-word {
-    font-size: 3rem;
-  }
-
-  .answer-buttons {
-    gap: 0.5rem;
-  }
-
-  .answer-buttons button {
-    padding: 0.8rem;
-    font-size: 0.9rem;
+  .progress-info {
+    min-width: 200px;
   }
 } 

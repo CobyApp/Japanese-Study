@@ -11,6 +11,8 @@ function VocabStudy() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [masteredCount, setMasteredCount] = useState(0);
+  const [wordStats, setWordStats] = useState({});
+  const [mostMissedWords, setMostMissedWords] = useState([]);
 
   useEffect(() => {
     async function loadWords() {
@@ -35,7 +37,23 @@ function VocabStudy() {
   };
 
   const handleUnknown = () => {
+    setWordStats(prev => ({
+      ...prev,
+      [currentWord.id]: (prev[currentWord.id] || 0) + 1
+    }));
     moveToNextWord(false);
+  };
+
+  const getMostMissedWords = () => {
+    const sortedWords = Object.entries(wordStats)
+      .map(([id, count]) => ({
+        word: words.find(w => w.id === id),
+        missCount: count
+      }))
+      .sort((a, b) => b.missCount - a.missCount)
+      .slice(0, 6);
+
+    setMostMissedWords(sortedWords);
   };
 
   const moveToNextWord = (wasKnown) => {
@@ -50,6 +68,7 @@ function VocabStudy() {
     }
 
     if (newRemainingWords.length === 0 || masteredCount + 1 === words.length) {
+      getMostMissedWords();
       setCompleted(true);
       return;
     }
@@ -68,13 +87,36 @@ function VocabStudy() {
 
   if (completed) {
     return (
-      <div className="vocab-study">
-        <div className="completed">
-          <div className="completed-icon">🎉</div>
-          <h2>Stage Clear!</h2>
-          <p className="completed-message">100개의 단어를 모두 마스터했습니다</p>
-          <div className="completed-buttons">
-            <button onClick={() => navigate('/')}>다음 스테이지로</button>
+      <div className="vocab-study" data-level={level}>
+        <div className="study-content">
+          <div className="completed">
+            <div className="completed-header">
+              <div className="completed-icon">🎉</div>
+              <h2>Stage Clear!</h2>
+              <p className="completed-message">100개의 단어를 모두 마스터했습니다</p>
+            </div>
+            
+            {mostMissedWords.length > 0 && (
+              <div className="missed-words-section">
+                <h3>자주 틀린 단어</h3>
+                <div className="missed-words-grid">
+                  {mostMissedWords.map(({ word, missCount }) => (
+                    <div key={word.id} className="missed-word-card">
+                      <div className="missed-count-badge">{missCount}회</div>
+                      <div className="missed-word-content">
+                        <div className="missed-word-kanji">{word.kanji}</div>
+                        <div className="missed-word-reading">{word.hiragana}</div>
+                        <div className="missed-word-meaning">{word.meaning}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            <div className="completed-buttons">
+              <button onClick={() => navigate('/')}>메인으로 돌아가기</button>
+            </div>
           </div>
         </div>
       </div>
