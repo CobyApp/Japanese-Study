@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import VocabStudy from './components/VocabStudy';
+import { Link } from 'react-router-dom';
 
 function App() {
-  const [selectedSection, setSelectedSection] = useState(null);
-
-  const n1Sections = [
+  const sections = [
     { id: '001-100', name: 'Stage 1' },
     { id: '101-200', name: 'Stage 2' },
     { id: '201-300', name: 'Stage 3' },
@@ -13,56 +11,86 @@ function App() {
     { id: '401-500', name: 'Stage 5' },
   ];
 
-  const n2Sections = n1Sections.map(section => ({
+  const n2Sections = sections.map(section => ({
     ...section,
     id: `n2/${section.id}`
   }));
 
-  if (selectedSection) {
-    return <VocabStudy section={selectedSection} onBack={() => setSelectedSection(null)} />;
-  }
+  const n3Sections = sections.map(section => ({
+    ...section,
+    id: `n3/${section.id}`
+  }));
 
   return (
     <div className="App">
       <div className="main-screen">
-        <h1 className="title">単語百先生</h1>
+        <header className="main-header">
+          <h1 className="title">単語百先生</h1>
+          <p className="subtitle">100개씩 스테이지를 클리어하며 단어를 마스터하세요</p>
+        </header>
         
-        <div className="level-section">
-          <h2 className="level-title">N1</h2>
+        <section className="level-section n1-section">
+          <h2 className="level-title">
+            <span className="level-badge">N1</span>
+          </h2>
           <div className="section-buttons">
-            {n1Sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => setSelectedSection(section.id)}
+            {sections.map((section) => (
+              <Link 
+                key={section.id} 
+                to={`/study/n1/${section.id}`}
                 className="section-button"
               >
-                <span>Stage</span>
-                <span>{section.name.split(' ')[1]}</span>
-              </button>
+                <div className="button-content">
+                  <span className="stage-name">{section.name}</span>
+                  <span className="stage-range">{section.id.split('-')[0]}-{section.id.split('-')[1]}</span>
+                </div>
+                <div className="button-arrow">→</div>
+              </Link>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="level-section">
-          <h2 className="level-title">N2</h2>
+        <section className="level-section n2-section">
+          <h2 className="level-title">
+            <span className="level-badge">N2</span>
+          </h2>
           <div className="section-buttons">
             {n2Sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => setSelectedSection(section.id)}
+              <Link 
+                key={section.id} 
+                to={`/study/n2/${section.id.split('/')[1]}`}
                 className="section-button"
               >
-                <span>Stage</span>
-                <span>{section.name.split(' ')[1]}</span>
-              </button>
+                <div className="button-content">
+                  <span className="stage-name">{section.name}</span>
+                  <span className="stage-range">{section.id.split('/')[1].split('-')[0]}-{section.id.split('/')[1].split('-')[1]}</span>
+                </div>
+                <div className="button-arrow">→</div>
+              </Link>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="level-section coming-soon">
-          <h2 className="level-title">N3</h2>
-          <p className="coming-soon-text">Coming Soon</p>
-        </div>
+        <section className="level-section n3-section">
+          <h2 className="level-title">
+            <span className="level-badge">N3</span>
+          </h2>
+          <div className="section-buttons">
+            {n3Sections.map((section) => (
+              <Link 
+                key={section.id} 
+                to={`/study/n3/${section.id.split('/')[1]}`}
+                className="section-button"
+              >
+                <div className="button-content">
+                  <span className="stage-name">{section.name}</span>
+                  <span className="stage-range">{section.id.split('/')[1].split('-')[0]}-{section.id.split('/')[1].split('-')[1]}</span>
+                </div>
+                <div className="button-arrow">→</div>
+              </Link>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
