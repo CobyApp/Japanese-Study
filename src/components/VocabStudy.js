@@ -90,6 +90,17 @@ function VocabStudy() {
   }
 
   if (completed) {
+    const handleRestart = () => {
+      setWords([...words]);
+      setRemainingWords([...words]);
+      setCurrentWord(words[0]);
+      setIsFlipped(false);
+      setCompleted(false);
+      setMasteredCount(0);
+      setWordStats({});
+      setMostMissedWords([]);
+    };
+
     return (
       <div className="vocab-study" data-level={level}>
         <div className="study-content">
@@ -119,17 +130,8 @@ function VocabStudy() {
             )}
             
             <div className="completed-buttons">
-              <button onClick={() => {
-                setWords([...words]);
-                setRemainingWords([...words]);
-                setCurrentWord(words[0]);
-                setIsFlipped(false);
-                setCompleted(false);
-                setMasteredCount(0);
-                setWordStats({});
-                setMostMissedWords([]);
-              }}>다시하기</button>
-              <button onClick={() => navigate('/')}>메인으로 가기</button>
+              <button onClick={handleRestart}>다시하기</button>
+              <button onClick={() => navigate('/')}>메인</button>
             </div>
           </div>
         </div>
@@ -141,7 +143,7 @@ function VocabStudy() {
     <div className="vocab-study" data-level={level}>
       <header className="study-header">
         <button className="back-link" onClick={() => navigate('/')}>
-          ← 메인으로
+          메인
         </button>
         <div className="progress-info">
           <div className="progress-bar">

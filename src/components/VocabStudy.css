@@ -157,6 +157,10 @@
   font-size: 4.5rem;
   color: #1a1a1a;
   font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .card-reading {
@@ -384,5 +388,9 @@
   .completed button {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
+  }
+
+  .card-word {
+    font-size: 3.5rem;
   }
 } 
