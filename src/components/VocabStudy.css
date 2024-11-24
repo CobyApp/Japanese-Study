@@ -1,50 +1,74 @@
 .vocab-study {
   min-height: 100vh;
-  background: #f6f8fa;
-  background: linear-gradient(135deg, #f6f8fa 0%, #e9ecef 100%);
+  background: #ffffff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2rem;
 }
 
-.progress-container {
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 2rem;
+.study-header {
+  padding: 1.5rem 2rem;
   background: white;
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-link {
+  color: #666;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background: #f8f9fa;
+}
+
+.progress-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .progress-bar {
-  width: 100%;
-  height: 8px;
-  background: #e9ecef;
-  border-radius: 4px;
+  width: 200px;
+  height: 6px;
+  background: #f1f3f5;
+  border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 0.5rem;
 }
 
 .progress {
   height: 100%;
-  background: #4dabf7;
+  background: #51cf66;
   transition: width 0.3s ease;
 }
 
 .progress-text {
-  text-align: right;
-  color: #636e72;
+  color: #666;
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+.study-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
 }
 
 .card-container {
   width: 100%;
   max-width: 500px;
-  height: 300px;
-  margin-bottom: 2rem;
+  height: 350px;
   perspective: 1000px;
 }
 
@@ -66,23 +90,22 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .card-front {
-  border-left: 5px solid #4dabf7;
+  background: white;
 }
 
 .card-back {
-  border-left: 5px solid #51cf66;
+  background: #fafafa;
   transform: rotateY(180deg);
 }
 
@@ -90,59 +113,61 @@
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
-  font-size: 1.1rem;
-  color: #868e96;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1rem;
+  color: #adb5bd;
+  font-weight: 500;
 }
 
 .card-word {
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 5rem;
-  color: #2d3436;
+  font-size: 4.5rem;
+  color: #1a1a1a;
   font-weight: 700;
 }
 
 .card-reading {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 2.5rem;
-  color: #2d3436;
-  margin-bottom: 1rem;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
 }
 
 .card-meaning {
-  font-size: 2rem;
-  color: #2d3436;
+  font-size: 1.8rem;
+  color: #1a1a1a;
 }
 
 .card-hint {
   position: absolute;
-  bottom: 1rem;
+  bottom: 1.5rem;
   left: 0;
   right: 0;
   text-align: center;
   font-size: 0.9rem;
-  color: #868e96;
+  color: #adb5bd;
 }
 
-.controls {
+.answer-buttons {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
 }
 
-.controls button {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+.answer-buttons button {
+  flex: 1;
+  padding: 1rem;
   border: none;
   border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  min-width: 160px;
+  transition: all 0.2s ease;
+  min-width: 0;
 }
 
 .unknown-button {
-  background: #e9ecef;
+  background: #f1f3f5;
   color: #495057;
 }
 
@@ -151,151 +176,88 @@
   color: white;
 }
 
-.controls button:hover {
-  transform: translateY(-2px);
-}
-
-.back-button {
-  margin-top: 2rem;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  background: white;
-  color: #636e72;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.back-button:hover {
+.answer-buttons button:hover {
   transform: translateY(-2px);
 }
 
 .completed {
   background: white;
   padding: 3rem;
-  border-radius: 24px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
   text-align: center;
-  animation: fadeIn 0.5s ease;
-  border-left: 5px solid #51cf66;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.completed-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
 }
 
 .completed h2 {
-  font-size: 2.5rem;
-  color: #343a40;
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.completed-message {
+  color: #666;
   margin-bottom: 2rem;
-  font-weight: 700;
 }
 
-.completed-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.completed-buttons button {
+.completed button {
   padding: 1rem 2rem;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-}
-
-.completed-buttons button:first-child {
   background: #4dabf7;
   color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.completed-buttons button:last-child {
-  background: #e9ecef;
-  color: #495057;
-}
-
-.completed-buttons button:hover {
+.completed button:hover {
   transform: translateY(-2px);
-}
-
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1.5rem;
-  color: #868e96;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  background: #3b9ceb;
 }
 
 @media (max-width: 768px) {
-  .vocab-study {
+  .study-header {
     padding: 1rem;
   }
 
-  .word-card {
-    height: 250px;
+  .study-content {
+    padding: 1rem;
   }
 
-  .card-front .word {
-    font-size: 4rem;
+  .card-word {
+    font-size: 3.5rem;
   }
 
-  .card-back .reading {
+  .card-reading {
     font-size: 2rem;
   }
 
-  .card-back .meaning {
+  .card-meaning {
     font-size: 1.5rem;
-  }
-
-  .controls button {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-  }
-
-  .card-number {
-    top: 1rem;
-    left: 1rem;
-    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .card-front .word {
+  .study-content {
+    padding: 1rem;
+  }
+
+  .card-word {
     font-size: 3rem;
   }
 
-  .card-back .reading {
-    font-size: 1.8rem;
+  .answer-buttons {
+    gap: 0.5rem;
   }
 
-  .card-back .meaning {
-    font-size: 1.2rem;
+  .answer-buttons button {
+    padding: 0.8rem;
+    font-size: 0.9rem;
   }
-
-  .controls {
-    flex-direction: column;
-  }
-
-  .controls button {
-    width: 100%;
-  }
-}
-
-.completed-message {
-  font-size: 1.2rem;
-  color: #495057;
-  margin: 1rem 0 2rem 0;
 } 

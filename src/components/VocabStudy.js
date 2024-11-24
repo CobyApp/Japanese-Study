@@ -62,31 +62,19 @@ function VocabStudy() {
     setIsFlipped(!isFlipped);
   };
 
-  const handleRestart = () => {
-    setRemainingWords(words);
-    setCurrentWord(words[0]);
-    setIsFlipped(false);
-    setCompleted(false);
-    setMasteredCount(0);
-  };
-
-  const handleBack = () => {
-    navigate('/');
-  };
-
   if (!words.length || !currentWord) {
-    return <div className="loading">Loading...</div>;
+    return <div className="loading">단어를 불러오는 중...</div>;
   }
 
   if (completed) {
     return (
       <div className="vocab-study">
         <div className="completed">
-          <h2>축하합니다!</h2>
-          <p className="completed-message">100개의 단어를 모두 학습했습니다</p>
+          <div className="completed-icon">🎉</div>
+          <h2>Stage Clear!</h2>
+          <p className="completed-message">100개의 단어를 모두 마스터했습니다</p>
           <div className="completed-buttons">
-            <button onClick={handleRestart}>다시 학습하기</button>
-            <button onClick={handleBack}>메인으로</button>
+            <button onClick={() => navigate('/')}>다음 스테이지로</button>
           </div>
         </div>
       </div>
@@ -95,45 +83,45 @@ function VocabStudy() {
 
   return (
     <div className="vocab-study">
-      <div className="progress-container">
-        <div className="progress-bar">
-          <div 
-            className="progress"
-            style={{ width: `${(masteredCount / words.length) * 100}%` }}
-          ></div>
-        </div>
-        <div className="progress-text">
-          {masteredCount} / {words.length}
-        </div>
-      </div>
-
-      <div className="card-container">
-        <div className={`card ${isFlipped ? 'is-flipped' : ''}`} onClick={handleFlip}>
-          <div className="card-face card-front">
-            <span className="card-number">#{currentWord.id}</span>
-            <span className="card-word">{currentWord.kanji}</span>
-            <span className="card-hint">클릭하여 뒤집기</span>
-          </div>
-          <div className="card-face card-back">
-            <span className="card-reading">{currentWord.hiragana}</span>
-            <span className="card-meaning">{currentWord.meaning}</span>
-            <span className="card-hint">클릭하여 뒤집기</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="controls">
-        <button className="unknown-button" onClick={handleUnknown}>
-          모르겠어요
+      <header className="study-header">
+        <button className="back-link" onClick={() => navigate('/')}>
+          ← 메인으로
         </button>
-        <button className="known-button" onClick={handleKnown}>
-          알고있어요
-        </button>
-      </div>
+        <div className="progress-info">
+          <div className="progress-bar">
+            <div 
+              className="progress"
+              style={{ width: `${(masteredCount / words.length) * 100}%` }}
+            ></div>
+          </div>
+          <span className="progress-text">{masteredCount} / {words.length}</span>
+        </div>
+      </header>
 
-      <button className="back-button" onClick={handleBack}>
-        메인으로
-      </button>
+      <main className="study-content">
+        <div className="card-container">
+          <div className={`card ${isFlipped ? 'is-flipped' : ''}`} onClick={handleFlip}>
+            <div className="card-face card-front">
+              <span className="card-number">#{currentWord.id}</span>
+              <span className="card-word">{currentWord.kanji}</span>
+              <span className="card-hint">터치하여 확인하기</span>
+            </div>
+            <div className="card-face card-back">
+              <span className="card-reading">{currentWord.hiragana}</span>
+              <span className="card-meaning">{currentWord.meaning}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="answer-buttons">
+          <button className="unknown-button" onClick={handleUnknown}>
+            아직 모르겠어요
+          </button>
+          <button className="known-button" onClick={handleKnown}>
+            외웠어요!
+          </button>
+        </div>
+      </main>
     </div>
   );
 }
