@@ -82,7 +82,7 @@ function VocabStudy() {
   }
 
   return (
-    <div className="vocab-study">
+    <div className="vocab-study" data-level={level}>
       <header className="study-header">
         <button className="back-link" onClick={() => navigate('/')}>
           ← 메인으로

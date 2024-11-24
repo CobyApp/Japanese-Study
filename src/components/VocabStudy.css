@@ -5,28 +5,44 @@
   flex-direction: column;
 }
 
+.vocab-study[data-level="n1"] {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 135, 135, 0.1) 100%);
+}
+
+.vocab-study[data-level="n2"] {
+  background: linear-gradient(135deg, rgba(77, 171, 247, 0.1) 0%, rgba(116, 192, 252, 0.1) 100%);
+}
+
+.vocab-study[data-level="n3"] {
+  background: linear-gradient(135deg, rgba(81, 207, 102, 0.1) 0%, rgba(105, 219, 124, 0.1) 100%);
+}
+
 .study-header {
   padding: 1.5rem 2rem;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .back-link {
-  color: #666;
+  color: #1a1a1a;
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 8px;
   transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .back-link:hover {
-  background: #f8f9fa;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .progress-info {
@@ -45,9 +61,12 @@
 
 .progress {
   height: 100%;
-  background: #51cf66;
   transition: width 0.3s ease;
 }
+
+.vocab-study[data-level="n1"] .progress { background: #ff6b6b; }
+.vocab-study[data-level="n2"] .progress { background: #4dabf7; }
+.vocab-study[data-level="n3"] .progress { background: #51cf66; }
 
 .progress-text {
   color: #666;
@@ -98,6 +117,18 @@
   background: white;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.vocab-study[data-level="n1"] .card-face {
+  border: 2px solid rgba(255, 107, 107, 0.2);
+}
+
+.vocab-study[data-level="n2"] .card-face {
+  border: 2px solid rgba(77, 171, 247, 0.2);
+}
+
+.vocab-study[data-level="n3"] .card-face {
+  border: 2px solid rgba(81, 207, 102, 0.2);
 }
 
 .card-front {
@@ -167,14 +198,23 @@
 }
 
 .unknown-button {
-  background: #f1f3f5;
-  color: #495057;
+  background: white;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.unknown-button:hover {
+  background: #f8f9fa;
 }
 
 .known-button {
-  background: #51cf66;
   color: white;
 }
+
+.vocab-study[data-level="n1"] .known-button { background: #ff6b6b; }
+.vocab-study[data-level="n2"] .known-button { background: #4dabf7; }
+.vocab-study[data-level="n3"] .known-button { background: #51cf66; }
 
 .answer-buttons button:hover {
   transform: translateY(-2px);

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 function App() {
   const sections = [
-    { id: '001-100', name: 'Stage 1' },
-    { id: '101-200', name: 'Stage 2' },
-    { id: '201-300', name: 'Stage 3' },
-    { id: '301-400', name: 'Stage 4' },
-    { id: '401-500', name: 'Stage 5' },
+    { id: '001-100', name: 'Stage 1', range: '001-100' },
+    { id: '101-200', name: 'Stage 2', range: '101-200' },
+    { id: '201-300', name: 'Stage 3', range: '201-300' },
+    { id: '301-400', name: 'Stage 4', range: '301-400' },
+    { id: '401-500', name: 'Stage 5', range: '401-500' },
   ];
 
   const n2Sections = sections.map(section => ({
@@ -27,7 +27,7 @@ function App() {
         <header className="main-header">
           <h1 className="title">単語百先生</h1>
           <div className="title-decoration"></div>
-          <p className="subtitle">스테이지별로 단어를 정복하세요</p>
+          <p className="subtitle">100개씩 스테이지를 클리어하며 단어를 정복해보세요!</p>
         </header>
         
         <div className="levels-container">
@@ -45,7 +45,7 @@ function App() {
                 >
                   <div className="stage-info">
                     <span className="stage-name">{section.name}</span>
-                    <span className="word-count">100 words</span>
+                    <span className="stage-range">{section.range}</span>
                   </div>
                 </Link>
               ))}
@@ -66,7 +66,7 @@ function App() {
                 >
                   <div className="stage-info">
                     <span className="stage-name">{section.name}</span>
-                    <span className="word-count">100 words</span>
+                    <span className="stage-range">{section.range}</span>
                   </div>
                 </Link>
               ))}
@@ -87,7 +87,7 @@ function App() {
                 >
                   <div className="stage-info">
                     <span className="stage-name">{section.name}</span>
-                    <span className="word-count">100 words</span>
+                    <span className="stage-range">{section.range}</span>
                   </div>
                 </Link>
               ))}
