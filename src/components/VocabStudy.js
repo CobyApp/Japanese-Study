@@ -64,6 +64,10 @@ function VocabStudy() {
     newRemainingWords.splice(currentIndex, 1);
 
     if (!wasKnown) {
+      setWordStats(prev => ({
+        ...prev,
+        [currentWord.id]: (prev[currentWord.id] || 0) + 1
+      }));
       newRemainingWords.push(currentWord);
     }
 
@@ -115,7 +119,17 @@ function VocabStudy() {
             )}
             
             <div className="completed-buttons">
-              <button onClick={() => navigate('/')}>메인으로 돌아가기</button>
+              <button onClick={() => {
+                setWords([...words]);
+                setRemainingWords([...words]);
+                setCurrentWord(words[0]);
+                setIsFlipped(false);
+                setCompleted(false);
+                setMasteredCount(0);
+                setWordStats({});
+                setMostMissedWords([]);
+              }}>다시하기</button>
+              <button onClick={() => navigate('/')}>메인으로 가기</button>
             </div>
           </div>
         </div>

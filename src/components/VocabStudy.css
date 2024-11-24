@@ -320,22 +320,30 @@
 
 .completed-buttons {
   margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .completed button {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: 500;
   color: white;
+  white-space: nowrap;
 }
 
-.vocab-study[data-level="n1"] .completed button { background: #ff6b6b; }
-.vocab-study[data-level="n2"] .completed button { background: #4dabf7; }
-.vocab-study[data-level="n3"] .completed button { background: #51cf66; }
+.completed button:first-child {
+  background: #868e96;  /* 다시 학습하기 버튼은 회색으로 */
+}
+
+.vocab-study[data-level="n1"] .completed button:last-child { background: #ff6b6b; }
+.vocab-study[data-level="n2"] .completed button:last-child { background: #4dabf7; }
+.vocab-study[data-level="n3"] .completed button:last-child { background: #51cf66; }
 
 .vocab-study[data-level="n1"] .missed-count-badge { color: #ff6b6b; }
 .vocab-study[data-level="n2"] .missed-count-badge { color: #4dabf7; }
@@ -363,5 +371,18 @@
 
   .progress-info {
     min-width: 200px;
+  }
+
+  .completed {
+    padding: 1.5rem;
+  }
+
+  .completed-buttons {
+    gap: 0.5rem;
+  }
+
+  .completed button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
   }
 } 
