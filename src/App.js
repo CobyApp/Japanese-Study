@@ -13,6 +13,11 @@ function App() {
     { id: '401-500', name: 'Stage 5' },
   ];
 
+  const n2Sections = n1Sections.map(section => ({
+    ...section,
+    id: `n2/${section.id}`
+  }));
+
   if (selectedSection) {
     return <VocabStudy section={selectedSection} onBack={() => setSelectedSection(null)} />;
   }
@@ -38,9 +43,20 @@ function App() {
           </div>
         </div>
 
-        <div className="level-section coming-soon">
+        <div className="level-section">
           <h2 className="level-title">N2</h2>
-          <p className="coming-soon-text">Coming Soon</p>
+          <div className="section-buttons">
+            {n2Sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => setSelectedSection(section.id)}
+                className="section-button"
+              >
+                <span>Stage</span>
+                <span>{section.name.split(' ')[1]}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="level-section coming-soon">

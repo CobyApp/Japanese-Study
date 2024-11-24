@@ -15,7 +15,8 @@ const VocabStudy = ({ section, onBack }) => {
     const loadWords = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`/n1/${section}.json`);
+        const level = section.includes('n2') ? 'n2' : section.includes('n3') ? 'n3' : 'n1';
+        const response = await fetch(`/${level}/${section}.json`);
         const data = await response.json();
         setWords(data);
         setRemainingWords(data.map((_, index) => index));
@@ -86,7 +87,7 @@ const VocabStudy = ({ section, onBack }) => {
   };
 
   return (
-    <div className={`study-container n1`}>
+    <div className={`study-container ${section.includes('n2') ? 'n2' : section.includes('n3') ? 'n3' : 'n1'}`}>
       <button className="back-button" onClick={onBack}>←</button>
       
       <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={() => setIsFlipped(!isFlipped)}>

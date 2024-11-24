@@ -18,16 +18,28 @@
     "meaning": "개최하다"
   },
   {
+    "id": "204",
+    "kanji": "見落とす",
+    "hiragana": "みおとす",
+    "meaning": "보놓치다, 간과하다"
+  },
+  {
     "id": "205",
     "kanji": "磨く",
     "hiragana": "みがく",
-    "meaning": "닦다, 연마하다 동"
+    "meaning": "닦다, 연마하다"
   },
   {
     "id": "206",
     "kanji": "満たす",
     "hiragana": "みたす",
     "meaning": "채우다, 충족시키다"
+  },
+  {
+    "id": "207",
+    "kanji": "見込む",
+    "hiragana": "みこむ",
+    "meaning": "예상하다, 기대하다"
   },
   {
     "id": "208",
@@ -60,10 +72,64 @@
     "meaning": "혜택받다, 은혜받다"
   },
   {
+    "id": "213",
+    "kanji": "目立つ",
+    "hiragana": "めだつ",
+    "meaning": "눈에 띄다"
+  },
+  {
+    "id": "214",
+    "kanji": "申し込む",
+    "hiragana": "もうしこむ",
+    "meaning": "신청하다"
+  },
+  {
+    "id": "215",
+    "kanji": "持ち込む",
+    "hiragana": "もちこむ",
+    "meaning": "가지고 들어가다"
+  },
+  {
+    "id": "216",
+    "kanji": "盛り上がる",
+    "hiragana": "もりあがる",
+    "meaning": "고조되다, 분위기가 달아오르다"
+  },
+  {
+    "id": "217",
+    "kanji": "役立つ",
+    "hiragana": "やくだつ",
+    "meaning": "도움이 되다, 유용하다"
+  },
+  {
+    "id": "218",
+    "kanji": "優先する",
+    "hiragana": "ゆうせんする",
+    "meaning": "우선하다"
+  },
+  {
+    "id": "219",
+    "kanji": "要する",
+    "hiragana": "ようする",
+    "meaning": "필요로 하다"
+  },
+  {
+    "id": "220",
+    "kanji": "喜ぶ",
+    "hiragana": "よろこぶ",
+    "meaning": "기뻐하다"
+  },
+  {
+    "id": "221",
+    "kanji": "分かれる",
+    "hiragana": "わかれる",
+    "meaning": "나뉘다, 갈라지다"
+  },
+  {
     "id": "222",
     "kanji": "漏れる",
     "hiragana": "もれる",
-    "meaning": "새다(누수) わ행"
+    "meaning": "새다, 누수되다"
   },
   {
     "id": "223",
@@ -141,13 +207,13 @@
     "id": "235",
     "kanji": "渡る",
     "hiragana": "わたる",
-    "meaning": "건너다 い"
+    "meaning": "건너다"
   },
   {
     "id": "236",
     "kanji": "割り込む",
     "hiragana": "わりこむ",
-    "meaning": "끼어들다 용"
+    "meaning": "끼어들다"
   },
   {
     "id": "237",
@@ -213,7 +279,7 @@
     "id": "247",
     "kanji": "幼い",
     "hiragana": "おさない",
-    "meaning": "어리다 た행"
+    "meaning": "어리다"
   },
   {
     "id": "248",
@@ -291,13 +357,13 @@
     "id": "260",
     "kanji": "乏しい",
     "hiragana": "とぼしい",
-    "meaning": "빈곤하다 い"
+    "meaning": "빈곤하다"
   },
   {
     "id": "261",
     "kanji": "辛い",
     "hiragana": "つらい",
-    "meaning": "괴롭다 용"
+    "meaning": "괴롭다"
   },
   {
     "id": "262",
@@ -501,7 +567,7 @@
     "id": "295",
     "kanji": "気楽だ",
     "hiragana": "きらくだ",
-    "meaning": "마음편하다 た행"
+    "meaning": "마음편하다"
   },
   {
     "id": "296",
