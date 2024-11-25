@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './VocabStudy.css';
 
@@ -14,49 +14,13 @@ function VocabStudy() {
   const [wordStats, setWordStats] = useState({});
   const [mostMissedWords, setMostMissedWords] = useState([]);
 
-  useEffect(() => {
-    async function loadWords() {
-      try {
-        const response = await fetch(`/${level}/${section}.json`);
-        const data = await response.json();
-        setWords(data);
-        setRemainingWords(data);
-        if (data.length > 0) {
-          setCurrentWord(data[0]);
-        }
-      } catch (error) {
-        console.error('Error loading words:', error);
-      }
-    }
-    loadWords();
-  }, [level, section]);
+  const handleFlip = useCallback(() => {
+    setIsFlipped(!isFlipped);
+  }, [isFlipped]);
 
-  const handleKnown = () => {
-    setMasteredCount(prev => prev + 1);
-    moveToNextWord(true);
-  };
+  const moveToNextWord = useCallback((wasKnown) => {
+    if (!currentWord) return;
 
-  const handleUnknown = () => {
-    setWordStats(prev => ({
-      ...prev,
-      [currentWord.id]: (prev[currentWord.id] || 0) + 1
-    }));
-    moveToNextWord(false);
-  };
-
-  const getMostMissedWords = () => {
-    const sortedWords = Object.entries(wordStats)
-      .map(([id, count]) => ({
-        word: words.find(w => w.id === id),
-        missCount: count
-      }))
-      .sort((a, b) => b.missCount - a.missCount)
-      .slice(0, 6);
-
-    setMostMissedWords(sortedWords);
-  };
-
-  const moveToNextWord = (wasKnown) => {
     setIsFlipped(false);
     
     const currentIndex = remainingWords.findIndex(w => w.id === currentWord.id);
@@ -79,10 +43,75 @@ function VocabStudy() {
 
     setRemainingWords(newRemainingWords);
     setCurrentWord(newRemainingWords[0]);
-  };
+  }, [currentWord, remainingWords, masteredCount, words.length]);
 
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
+  const handleKnown = useCallback(() => {
+    setMasteredCount(prev => prev + 1);
+    moveToNextWord(true);
+  }, [moveToNextWord]);
+
+  const handleUnknown = useCallback(() => {
+    if (!currentWord) return;
+    
+    setWordStats(prev => ({
+      ...prev,
+      [currentWord.id]: (prev[currentWord.id] || 0) + 1
+    }));
+    moveToNextWord(false);
+  }, [currentWord, moveToNextWord]);
+
+  useEffect(() => {
+    async function loadWords() {
+      try {
+        const response = await fetch(`/${level}/${section}.json`);
+        const data = await response.json();
+        setWords(data);
+        setRemainingWords(data);
+        if (data.length > 0) {
+          setCurrentWord(data[0]);
+        }
+      } catch (error) {
+        console.error('Error loading words:', error);
+      }
+    }
+    loadWords();
+  }, [level, section]);
+
+  useEffect(() => {
+    function handleKeyPress(event) {
+      if (completed || !currentWord) return;
+
+      switch(event.key.toLowerCase()) {
+        case 'z':
+          handleUnknown();
+          break;
+        case 'x':
+          handleKnown();
+          break;
+        case 'c':
+          handleFlip();
+          break;
+        default:
+          break;
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [completed, currentWord, handleKnown, handleUnknown, handleFlip]);
+
+  const getMostMissedWords = () => {
+    const sortedWords = Object.entries(wordStats)
+      .map(([id, count]) => ({
+        word: words.find(w => w.id === id),
+        missCount: count
+      }))
+      .sort((a, b) => b.missCount - a.missCount)
+      .slice(0, 6);
+
+    setMostMissedWords(sortedWords);
   };
 
   if (!words.length || !currentWord) {
@@ -143,8 +172,13 @@ function VocabStudy() {
     <div className="vocab-study" data-level={level}>
       <header className="study-header">
         <button className="back-link" onClick={() => navigate('/')}>
-          메인
+          ←
         </button>
+        <div className="keyboard-shortcuts">
+          <span>Z: 모르겠어요</span>
+          <span>X: 외웠어요</span>
+          <span>C: 뒤집기</span>
+        </div>
         <div className="progress-info">
           <div className="progress-bar">
             <div 
