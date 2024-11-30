@@ -156,3 +156,89 @@
     grid-template-columns: 1fr;
   }
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0 1rem;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  margin: 1rem;
+}
+
+.modal-content h3 {
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  background: #f8f9fa;
+  color: #1a1a1a;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.modal-button:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.modal-close {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 12px;
+  background: #e9ecef;
+  color: #495057;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #dee2e6;
+}
+
+/* 레벨별 모달 버튼 색상 */
+.n1-section .modal-button:first-child { background: #ff6b6b; color: white; }
+.n2-section .modal-button:first-child { background: #4dabf7; color: white; }
+.n3-section .modal-button:first-child { background: #51cf66; color: white; }
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .modal-button {
+    padding: 1rem 1.5rem;
+  }
+}

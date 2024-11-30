@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import './VocabStudy.css';
 
 function VocabStudy() {
   const { level, section } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const mode = searchParams.get('mode');
+  
   const [words, setWords] = useState([]);
   const [remainingWords, setRemainingWords] = useState([]);
   const [currentWord, setCurrentWord] = useState(null);
@@ -13,6 +17,7 @@ function VocabStudy() {
   const [masteredCount, setMasteredCount] = useState(0);
   const [wordStats, setWordStats] = useState({});
   const [mostMissedWords, setMostMissedWords] = useState([]);
+  const [currentSet, setCurrentSet] = useState(0);
 
   const handleFlip = useCallback(() => {
     setIsFlipped(!isFlipped);
@@ -65,17 +70,29 @@ function VocabStudy() {
       try {
         const response = await fetch(`/${level}/${section}.json`);
         const data = await response.json();
-        setWords(data);
-        setRemainingWords(data);
-        if (data.length > 0) {
-          setCurrentWord(data[0]);
+        
+        if (mode === 'split') {
+          const startIndex = currentSet * 10;
+          const endIndex = startIndex + 10;
+          const currentSetWords = data.slice(startIndex, endIndex);
+          setWords(currentSetWords);
+          setRemainingWords(currentSetWords);
+          if (currentSetWords.length > 0) {
+            setCurrentWord(currentSetWords[0]);
+          }
+        } else {
+          setWords(data);
+          setRemainingWords(data);
+          if (data.length > 0) {
+            setCurrentWord(data[0]);
+          }
         }
       } catch (error) {
         console.error('Error loading words:', error);
       }
     }
     loadWords();
-  }, [level, section]);
+  }, [level, section, mode, currentSet]);
 
   useEffect(() => {
     function handleKeyPress(event) {
@@ -114,22 +131,24 @@ function VocabStudy() {
     setMostMissedWords(sortedWords);
   };
 
+  const moveToNextSet = useCallback(() => {
+    const nextSet = currentSet + 1;
+    if (nextSet * 10 < 100) {
+      setCurrentSet(nextSet);
+      setCompleted(false);
+      setMasteredCount(0);
+      setWordStats({});
+      setMostMissedWords([]);
+    } else {
+      navigate('/');
+    }
+  }, [currentSet, navigate]);
+
   if (!words.length || !currentWord) {
     return <div className="loading">단어를 불러오는 중...</div>;
   }
 
   if (completed) {
-    const handleRestart = () => {
-      setWords([...words]);
-      setRemainingWords([...words]);
-      setCurrentWord(words[0]);
-      setIsFlipped(false);
-      setCompleted(false);
-      setMasteredCount(0);
-      setWordStats({});
-      setMostMissedWords([]);
-    };
-
     return (
       <div className="vocab-study" data-level={level}>
         <div className="study-content">
@@ -137,7 +156,11 @@ function VocabStudy() {
             <div className="completed-header">
               <div className="completed-icon">🎉</div>
               <h2>Stage Clear!</h2>
-              <p className="completed-message">100개의 단어를 모두 마스터했습니다</p>
+              <p className="completed-message">
+                {mode === 'split' 
+                  ? `${currentSet + 1}번째 세트 (${currentSet * 10 + 1}-${(currentSet + 1) * 10}) 완료!`
+                  : '100개의 단어를 모두 마스터했습니다'}
+              </p>
             </div>
             
             {mostMissedWords.length > 0 && (
@@ -159,8 +182,14 @@ function VocabStudy() {
             )}
             
             <div className="completed-buttons">
-              <button onClick={handleRestart}>다시하기</button>
-              <button onClick={() => navigate('/')}>메인</button>
+              {mode === 'split' && currentSet * 10 + 10 < 100 ? (
+                <>
+                  <button onClick={moveToNextSet}>다음 10개 학습하기</button>
+                  <button onClick={() => navigate('/')}>메인으로</button>
+                </>
+              ) : (
+                <button onClick={() => navigate('/')}>메인으로</button>
+              )}
             </div>
           </div>
         </div>
