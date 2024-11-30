@@ -45,10 +45,6 @@
   justify-content: center;
 }
 
-.back-link:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
 .progress-info {
   display: flex;
   align-items: center;
@@ -63,14 +59,16 @@
   overflow: hidden;
 }
 
-.progress {
-  height: 100%;
-  transition: width 0.3s ease;
+.keyboard-shortcuts {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 1.5rem;
+  color: #868e96;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
-
-.vocab-study[data-level="n1"] .progress { background: #ff6b6b; }
-.vocab-study[data-level="n2"] .progress { background: #4dabf7; }
-.vocab-study[data-level="n3"] .progress { background: #51cf66; }
 
 .progress-text {
   color: #666;
@@ -96,14 +94,12 @@
   max-width: 500px;
   height: 350px;
   perspective: 1000px;
-  position: relative;
 }
 
 .card {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
-  cursor: pointer;
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -127,16 +123,28 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.card-front, .card-back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.card-front {
+  transform: rotateY(0deg);
 }
 
 .card-back {
   transform: rotateY(180deg);
+}
+
+/* Safari 및 iOS 대응 */
+@supports (-webkit-touch-callout: none) {
+  .card-face {
+    -webkit-transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  
+  .card.is-flipped .card-front {
+    visibility: hidden;
+  }
+  
+  .card:not(.is-flipped) .card-back {
+    visibility: hidden;
+  }
 }
 
 .vocab-study[data-level="n1"] .card-face {
@@ -429,19 +437,7 @@
   }
 }
 
-.keyboard-shortcuts {
-  display: none;  /* 기본적으로 숨김 */
-  gap: 1rem;
-  color: #868e96;
-  font-size: 0.9rem;
-  margin: 0 1rem;
-}
-
-.keyboard-shortcuts span {
-  white-space: nowrap;
-}
-
-/* 데스크탑에서만 표시 */
+/* 데스크탑에서만 키보드 단축키 표시 */
 @media (min-width: 768px) {
   .keyboard-shortcuts {
     display: flex;
@@ -450,6 +446,14 @@
 
 @media (max-width: 768px) {
   .study-header {
-    justify-content: space-between;
+    padding: 1rem;
+  }
+}
+
+/* iOS 디바이스를 위한 추가 스타일 */
+@supports (-webkit-touch-callout: none) {
+  .card-face {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 } 

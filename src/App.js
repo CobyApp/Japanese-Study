@@ -30,7 +30,7 @@ function App() {
         <header className="main-header">
           <h1 className="title">単語百先生</h1>
           <div className="title-decoration"></div>
-          <p className="subtitle">100개씩 스테이지를 클리어하며 단어를 정복해보세요!</p>
+          <p className="subtitle">100개씩 클리어하며 단어를 정복해보세요!</p>
         </header>
         
         <div className="levels-container">
