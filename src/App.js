@@ -29,7 +29,6 @@ function App() {
       <div className="main-screen">
         <header className="main-header">
           <h1 className="title">単語百先生</h1>
-          <div className="title-decoration"></div>
           <p className="subtitle">100개씩 클리어하며 단어를 정복해보세요!</p>
         </header>
         
@@ -57,7 +56,6 @@ function App() {
           <section className="level-section n2-section">
             <div className="level-header">
               <span className="level-badge">N2</span>
-              <span className="stage-count">5 Stages</span>
             </div>
             <div className="stage-grid">
               {sections.map((section) => (
@@ -78,7 +76,6 @@ function App() {
           <section className="level-section n3-section">
             <div className="level-header">
               <span className="level-badge">N3</span>
-              <span className="stage-count">5 Stages</span>
             </div>
             <div className="stage-grid">
               {sections.map((section) => (

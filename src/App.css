@@ -24,20 +24,11 @@
   letter-spacing: 2px;
 }
 
-.title-decoration {
-  width: 60px;
-  height: 4px;
-  background: #adb5bd;
-  margin: 1.5rem auto;
-  border-radius: 2px;
-}
-
 .subtitle {
   font-size: 1.2rem;
   color: #666;
   margin-top: 1rem;
   font-weight: 500;
-  line-height: 1.6;
 }
 
 .levels-container {
@@ -67,9 +58,7 @@
 .level-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 2rem;
-  padding: 0 1rem;
 }
 
 .level-badge {
@@ -77,12 +66,6 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: white;
-}
-
-.stage-count {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
 }
 
 .stage-grid {
